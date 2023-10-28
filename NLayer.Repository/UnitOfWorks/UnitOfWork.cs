@@ -1,4 +1,4 @@
-﻿using NLayer.Core.Repositories.UnitOfWorks;
+﻿using NLayer.Core.UnitOfWorks;
 using System;
 using System.Collections.Generic;
 using System.Linq;

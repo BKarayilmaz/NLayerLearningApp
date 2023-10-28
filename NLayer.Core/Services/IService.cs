@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayer.Core.Repositories.Services
+namespace NLayer.Core.Services
 {
     public interface IService<T> where T : class
     {
@@ -13,10 +13,10 @@ namespace NLayer.Core.Repositories.Services
         Task<IEnumerable<T>> GetAllAsync();
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression);
-        Task AddAsync(T entity);
-        Task AddRangeAsync(IEnumerable<T> entities);
+        Task<T> AddAsync(T entity);
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);
         Task UpdateAsync(T entity);
         Task RemoveAsync(T entity);
-        Task RemoveRangeAsync(T entity);
+        Task RemoveRangeAsync(IEnumerable<T> entities);
     }
 }

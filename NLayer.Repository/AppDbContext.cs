@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NLayer.Core;
+using NLayer.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -22,7 +22,21 @@ namespace NLayer.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            // Product ile ProductFeature arasındaki ilişkiyi tanımlayın
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.ProductFeature)
+                .WithOne(pf => pf.Product)
+                .HasForeignKey<ProductFeature>(pf => pf.ProductId);
+
+            // Product ile Category arasındaki ilişkiyi tanımlayın
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryId);
+
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
             modelBuilder.Entity<ProductFeature>().HasData(new ProductFeature()
             {
                 Id=1,

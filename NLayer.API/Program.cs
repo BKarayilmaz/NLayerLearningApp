@@ -1,8 +1,8 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using NLayer.Core.Repositories;
-using NLayer.Core.Repositories.Services;
-using NLayer.Core.Repositories.UnitOfWorks;
+using NLayer.Core.Services;
+using NLayer.Core.UnitOfWorks;
 using NLayer.Repository;
 using NLayer.Repository.Repositories;
 using NLayer.Repository.UnitOfWorks;

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using NLayer.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +8,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Diagnostics;
 using System.Xml.Linq;
+using NLayer.Core.Models;
 
 namespace NLayer.Repository.Seeds
 {
